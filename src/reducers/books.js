@@ -5,19 +5,33 @@ const bookSlice = createSlice({
   initialState: {
     booksArray: [
       {
+        Title: 'Theory of everything',
+        category: 'Science',
         ID: Math.floor(Math.random() * 100) + 1,
-        Title: 'Harry Potter 2',
-        Category: 'Magic',
+      },
+      {
+        Title: 'Creative crafting',
+        category: 'Arts',
+        ID: Math.floor(Math.random() * 100) + 1,
+      },
+      {
+        Title: 'Harry Potter',
+        category: 'Fiction',
+        ID: Math.floor(Math.random() * 100) + 1,
       },
     ],
   },
+
   reducers: {
-    addBook: (state, action) => {
+    CREATE_BOOK: (state, action) => {
+      state.booksArray.append(action.payload);
+    },
+    REMOVE_BOOK: (state, action) => {
       state.booksArray.append(action.payload);
     },
   },
 });
 
-export const { addBook } = bookSlice.actions;
+export const { CREATE_BOOK, REMOVE_BOOK } = bookSlice.actions;
 
 export default bookSlice.reducer;

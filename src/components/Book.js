@@ -1,5 +1,5 @@
-const Book = () => {
-  <h1>Book</h1>;
+const Book = (book = '') => {
+  <h1>{book}</h1>;
 };
 
 export default Book;

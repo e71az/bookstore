@@ -5,7 +5,7 @@ const bookSlice = createSlice({
   initialState: {
     booksArray: [
       {
-        ID: Math.floor(Math.random() * 101),
+        ID: Math.floor(Math.random() * 100) + 1,
         Title: 'Harry Potter 2',
         Category: 'Magic',
       },

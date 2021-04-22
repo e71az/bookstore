@@ -15,7 +15,7 @@ const BooksForm = () => {
     'Learning',
     'Sci-Fi',
   ];
-  let book = { ID: null, Title: null, category: null };
+  let book = { ID: null, Title: null, category: 'Action' };
 
   return (
     <Form>

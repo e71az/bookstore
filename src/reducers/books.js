@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, current } from '@reduxjs/toolkit';
 
 const bookSlice = createSlice({
   name: 'bookCreator',
@@ -29,9 +29,11 @@ const bookSlice = createSlice({
     },
     REMOVE_BOOK: (state, action) => {
       // console.log(action.payload);
-      state.booksArray.filter((obj) => console.log(`ID ${obj.ID} ${action.payload.ID}`));
-      state.booksArray.filter((obj) => obj.ID !== action.payload.ID);
-      console.log(state.booksArray);
+      console.log(current(state.booksArray));
+      const x = [...state.booksArray];
+      return x.filter(
+        (obj) => obj.ID !== action.payload.ID,
+      );
     },
   },
 });

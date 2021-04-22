@@ -24,11 +24,14 @@ const bookSlice = createSlice({
 
   reducers: {
     CREATE_BOOK: (state, action) => {
-      console.log(action.payload);
+      // console.log(action.payload);
       state.booksArray.push(action.payload);
     },
     REMOVE_BOOK: (state, action) => {
-      state.booksArray.push(action.payload);
+      // console.log(action.payload);
+      state.booksArray.filter((obj) => console.log(`ID ${obj.ID} ${action.payload.ID}`));
+      state.booksArray.filter((obj) => obj.ID !== action.payload.ID);
+      console.log(state.booksArray);
     },
   },
 });

@@ -47,9 +47,12 @@ const BooksForm = () => {
         type="submit"
         onClick={(event) => {
           event.preventDefault();
-          book.ID = 55;
+          book.ID = Math.floor(Math.random() * 100) + 1;
           dispatch(CREATE_BOOK(book));
           book = { ID: null, Title: null, category: null };
+          document.getElementById('exampleForm.ControlInput1').value = '';
+          document.getElementById('exampleForm.ControlSelect1').value = 'Action';
+
           console.log(booksArray);
         }}
       >

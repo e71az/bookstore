@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import Book from '../components/Book';
 
 const BooksList = () => {
   const { booksArray } = useSelector((state) => state.books);
@@ -12,21 +13,7 @@ const BooksList = () => {
       </tr>
 
       { booksArray.map((book) => (
-        <tr key={book.ID}>
-          <td>
-            {book.ID}
-            {' '}
-          </td>
-          <td>
-            {book.Title}
-            {' '}
-          </td>
-          <td>
-            {book.category}
-            {' '}
-          </td>
-        </tr>
-
+        <Book key={book.ID} book={book} />
       ))}
 
     </table>

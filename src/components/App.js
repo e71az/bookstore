@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CREATE_BOOK } from '../reducers/books';
-import BooksForm from './BooksForm';
-import BooksList from './BooksList';
+import BooksForm from '../containers/BooksForm';
+import BooksList from '../containers/BooksList';
 
 const App = () => {
   const { booksArray } = useSelector((state) => state.books);

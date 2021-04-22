@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
+import booksReducer from './books';
 
 const store = configureStore({
   reducer: {
-    // counter: counterReducer,
+    books: booksReducer,
   },
 });
 

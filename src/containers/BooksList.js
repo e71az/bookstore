@@ -11,11 +11,9 @@ const BooksList = () => {
         <th>Title</th>
         <th>Category</th>
       </tr>
-
-      { booksArray.map((book) => (
+      {booksArray.map((book) => (
         <Book key={book.ID} book={book} />
       ))}
-
     </table>
   );
 };

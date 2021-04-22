@@ -1,10 +1,8 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { REMOVE_BOOK } from '../reducers/books';
 
 // eslint-disable-next-line react/prop-types
 const Book = ({ book: { ID, Title, category } }) => {
-  const book = { ID, Title, category };
-  const { booksArray } = useSelector((state) => state.books);
   const dispatch = useDispatch();
   return (
     <tr>
@@ -16,11 +14,8 @@ const Book = ({ book: { ID, Title, category } }) => {
           type="button"
           onClick={(event) => {
             event.preventDefault();
-            // eslint-disable-next-line no-debugger
-            // debugger;
-            dispatch(REMOVE_BOOK(book));
 
-            console.log(booksArray);
+            dispatch(REMOVE_BOOK(ID));
           }}
         >
           Remove Book

@@ -1,10 +1,9 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { CREATE_BOOK } from '../reducers/books';
 
 const BooksForm = () => {
-  const { booksArray } = useSelector((state) => state.books);
   const dispatch = useDispatch();
   const categories = [
     'Action',
@@ -52,8 +51,6 @@ const BooksForm = () => {
           book = { ID: null, Title: null, category: null };
           document.getElementById('exampleForm.ControlInput1').value = '';
           document.getElementById('exampleForm.ControlSelect1').value = 'Action';
-
-          console.log(booksArray);
         }}
       >
         Add book

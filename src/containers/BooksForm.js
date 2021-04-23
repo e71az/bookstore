@@ -24,6 +24,15 @@ const BooksForm = () => {
     }
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    book.ID = Math.floor(Math.random() * 1000) + 1;
+    dispatch(CREATE_BOOK(book));
+    book = { ID: null, Title: null, category: 'Action' };
+    document.getElementById('exampleForm.ControlInput1').value = '';
+    document.getElementById('exampleForm.ControlSelect1').value = 'Action';
+  };
+
   return (
     <Form>
       <Form.Group controlId="exampleForm.ControlInput1">
@@ -53,12 +62,7 @@ const BooksForm = () => {
         variant="primary"
         type="submit"
         onClick={(event) => {
-          event.preventDefault();
-          book.ID = Math.floor(Math.random() * 100) + 1;
-          dispatch(CREATE_BOOK(book));
-          book = { ID: null, Title: null, category: 'Action' };
-          document.getElementById('exampleForm.ControlInput1').value = '';
-          document.getElementById('exampleForm.ControlSelect1').value = 'Action';
+          handleSubmit(event);
         }}
       >
         Add book

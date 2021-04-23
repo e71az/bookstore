@@ -28,7 +28,7 @@ const BooksForm = () => {
     event.preventDefault();
     book.ID = Math.floor(Math.random() * 1000) + 1;
     dispatch(CREATE_BOOK(book));
-    book = { ID: null, Title: null, category: 'Action' };
+    book = { ID: null, Title: null, category: book.category };
     document.getElementById('exampleForm.ControlInput1').value = '';
     document.getElementById('exampleForm.ControlSelect1').value = 'Action';
   };

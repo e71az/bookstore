@@ -20,7 +20,7 @@ const CategoryFilter = ({ handleFilterChange }) => {
   return (
     <Form>
 
-      <Form.Group controlId="exampleForm.ControlSelect1">
+      <Form.Group controlId="exampleForm.CategorySelect1">
         <Form.Label>Category</Form.Label>
         <Form.Control
           as="select"

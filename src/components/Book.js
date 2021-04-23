@@ -14,7 +14,6 @@ const Book = ({ book: { ID, Title, category } }) => {
           type="button"
           onClick={(event) => {
             event.preventDefault();
-
             dispatch(REMOVE_BOOK(ID));
           }}
         >

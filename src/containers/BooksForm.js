@@ -16,6 +16,14 @@ const BooksForm = () => {
   ];
   let book = { ID: null, Title: null, category: 'Action' };
 
+  const handleChange = (bookProp, event) => {
+    if (bookProp === 'title') {
+      book.Title = event.target.value;
+    } else {
+      book.category = event.target.value;
+    }
+  };
+
   return (
     <Form>
       <Form.Group controlId="exampleForm.ControlInput1">
@@ -24,7 +32,7 @@ const BooksForm = () => {
           type="input"
           placeholder="Please enter title of the book"
           onChange={(event) => {
-            book.Title = event.target.value;
+            handleChange('title', event);
           }}
         />
       </Form.Group>
@@ -33,7 +41,7 @@ const BooksForm = () => {
         <Form.Control
           as="select"
           onChange={(event) => {
-            book.category = event.target.value;
+            handleChange('category', event);
           }}
         >
           {categories.map((category) => (
@@ -48,7 +56,7 @@ const BooksForm = () => {
           event.preventDefault();
           book.ID = Math.floor(Math.random() * 100) + 1;
           dispatch(CREATE_BOOK(book));
-          book = { ID: null, Title: null, category: null };
+          book = { ID: null, Title: null, category: 'Action' };
           document.getElementById('exampleForm.ControlInput1').value = '';
           document.getElementById('exampleForm.ControlSelect1').value = 'Action';
         }}

@@ -7,17 +7,17 @@ const bookSlice = createSlice({
       {
         Title: 'Theory of everything',
         category: 'Science',
-        ID: Math.floor(Math.random() * 1000) + 1,
+        ID: Math.floor(Math.random() * 100) + 1,
       },
       {
         Title: 'Creative crafting',
         category: 'Arts',
-        ID: Math.floor(Math.random() * 1000) + 1,
+        ID: Math.floor(Math.random() * 100) + 1,
       },
       {
         Title: 'Harry Potter',
         category: 'Fiction',
-        ID: Math.floor(Math.random() * 1000) + 1,
+        ID: Math.floor(Math.random() * 100) + 1,
       },
     ],
   },

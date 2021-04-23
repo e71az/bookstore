@@ -1,6 +1,6 @@
 # Book Store
 
-This is a simple book store application created using react and redux.
+This is a simple book store application created using react and redux-toolkit.
 
 ## Built With
 

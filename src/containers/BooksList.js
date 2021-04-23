@@ -3,6 +3,7 @@ import Book from '../components/Book';
 
 const BooksList = () => {
   const { booksArray } = useSelector((state) => state.books);
+  const checkIfEmtpy = booksArray.length === 0 ? 'No books' : booksArray.map((book) => (<Book key={book.ID} book={book} />));
 
   return (
     <table>
@@ -11,11 +12,7 @@ const BooksList = () => {
         <th>Title</th>
         <th>Category</th>
       </tr>
-
-      { booksArray.map((book) => (
-        <Book key={book.ID} book={book} />
-      ))}
-
+      {checkIfEmtpy}
     </table>
   );
 };

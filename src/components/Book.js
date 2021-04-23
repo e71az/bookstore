@@ -1,10 +1,30 @@
-// eslint-disable-next-line react/prop-types
-const Book = ({ book: { ID, Title, category } }) => (
-  <tr>
-    <td>{ID}</td>
-    <td>{Title}</td>
-    <td>{category}</td>
-  </tr>
-);
+import { useDispatch } from 'react-redux';
+import { REMOVE_BOOK } from '../reducers/books';
 
+// eslint-disable-next-line react/prop-types
+const Book = ({ book: { ID, Title, category } }) => {
+  const dispatch = useDispatch();
+
+  const handleRemoveBook = (event) => {
+    event.preventDefault();
+    dispatch(REMOVE_BOOK(ID));
+  };
+  return (
+    <tr>
+      <td>{ID}</td>
+      <td>{Title}</td>
+      <td>{category}</td>
+      <td>
+        <button
+          type="button"
+          onClick={(event) => {
+            handleRemoveBook(event);
+          }}
+        >
+          Remove Book
+        </button>
+      </td>
+    </tr>
+  );
+};
 export default Book;

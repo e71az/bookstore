@@ -14,9 +14,29 @@ const BooksList = () => {
     // document.getElementById('exampleForm.ControlSelect1').value = 'All';
   };
   const { booksArray, filter } = useSelector((state) => state.books);
+  // eslint-disable-next-line max-len
+  // const checkIfEmtpy = booksArray.length === 0 ? 'No books' : booksArray.map((book) => (<Book key={book.ID} book={book} />));
+
   console.log(booksArray);
-  const displayBook = (book) => (<Book key={book.ID} book={book} />);
-  const filteredArray = filter === 'All' ? booksArray : booksArray.filter((obj) => obj.category === filter);
+
+  let checkIfEmtpy = booksArray;
+
+  if (booksArray.length === 0 || booksArray === undefined) {
+    checkIfEmtpy = 'No books';
+  } else if (filter !== 'All') {
+    checkIfEmtpy = checkIfEmtpy.map((book) => (
+      <Book key={book.ID} book={book} />
+    ));
+    checkIfEmtpy = booksArray.filter((obj) => obj.category === filter);
+  } else if (filter === 'All') {
+    checkIfEmtpy = booksArray.map((book) => <Book key={book.ID} book={book} />);
+  } else {
+    checkIfEmtpy = 'idk what happened';
+  }
+
+  // const displayBook = (book) => (<Book key={book.ID} book={book} />);
+  // eslint-disable-next-line max-len
+  // const filteredArray = filter === 'All' ? booksArray : booksArray.filter((obj) => obj.category === filter);
 
   return (
     <div>
@@ -27,7 +47,7 @@ const BooksList = () => {
           <th>Title</th>
           <th>Category</th>
         </tr>
-        {filteredArray.map(displayBook)}
+        {checkIfEmtpy}
       </table>
     </div>
   );

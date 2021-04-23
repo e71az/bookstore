@@ -24,10 +24,11 @@ const BooksList = () => {
   if (booksArray.length === 0 || booksArray === undefined) {
     checkIfEmtpy = 'No books';
   } else if (filter !== 'All') {
+    checkIfEmtpy = booksArray.filter((obj) => obj.category === filter);
+
     checkIfEmtpy = checkIfEmtpy.map((book) => (
       <Book key={book.ID} book={book} />
     ));
-    checkIfEmtpy = booksArray.filter((obj) => obj.category === filter);
   } else if (filter === 'All') {
     checkIfEmtpy = booksArray.map((book) => <Book key={book.ID} book={book} />);
   } else {

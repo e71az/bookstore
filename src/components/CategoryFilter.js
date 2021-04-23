@@ -1,9 +1,12 @@
 import Form from 'react-bootstrap/Form';
 import { PropTypes } from 'prop-types';
-// import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const CategoryFilter = ({ handleFilterChange }) => {
+  const { booksArray, filter } = useSelector((state) => state.books);
+  console.log(booksArray);
   const categories = [
+    'All',
     'Action',
     'Biography',
     'History',
@@ -22,10 +25,11 @@ const CategoryFilter = ({ handleFilterChange }) => {
         <Form.Control
           as="select"
           onChange={(event) => {
-            handleFilterChange(event);
+            handleFilterChange(event, filter);
           }}
         >
           {categories.map((category) => (
+
             <option key="i">{category}</option>
           ))}
         </Form.Control>

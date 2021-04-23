@@ -11,7 +11,7 @@ const BooksList = () => {
 
     dispatch(CHANGE_FILTER(event.target.value));
 
-    document.getElementById('exampleForm.ControlSelect1').value = 'All';
+    // document.getElementById('exampleForm.ControlSelect1').value = 'All';
   };
   const { booksArray, filter } = useSelector((state) => state.books);
   console.log(booksArray);

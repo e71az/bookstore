@@ -4,6 +4,11 @@ import { REMOVE_BOOK } from '../reducers/books';
 // eslint-disable-next-line react/prop-types
 const Book = ({ book: { ID, Title, category } }) => {
   const dispatch = useDispatch();
+
+  const handleRemoveBook = (event) => {
+    event.preventDefault();
+    dispatch(REMOVE_BOOK(ID));
+  };
   return (
     <tr>
       <td>{ID}</td>
@@ -13,8 +18,7 @@ const Book = ({ book: { ID, Title, category } }) => {
         <button
           type="button"
           onClick={(event) => {
-            event.preventDefault();
-            dispatch(REMOVE_BOOK(ID));
+            handleRemoveBook(event);
           }}
         >
           Remove Book

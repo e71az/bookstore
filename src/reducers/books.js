@@ -20,6 +20,9 @@ const bookSlice = createSlice({
         ID: Math.floor(Math.random() * 100) + 1,
       },
     ],
+    filter: 'All',
+    filteredBooks: [],
+
   },
 
   reducers: {
@@ -29,9 +32,16 @@ const bookSlice = createSlice({
     REMOVE_BOOK: (state, action) => ({
       booksArray: state.booksArray.filter((obj) => obj.ID !== action.payload),
     }),
+
+    // eslint-disable-next-line max-len
+    CHANGE_FILTER: (state, action) => ({
+      filter: action.payload,
+      booksArray: state.booksArray,
+    }),
   },
+
 });
 
-export const { CREATE_BOOK, REMOVE_BOOK } = bookSlice.actions;
+export const { CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER } = bookSlice.actions;
 
 export default bookSlice.reducer;

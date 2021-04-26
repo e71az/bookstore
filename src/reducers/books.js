@@ -32,7 +32,6 @@ const bookSlice = createSlice({
       booksArray: state.booksArray.filter((obj) => obj.ID !== action.payload),
     }),
 
-    // eslint-disable-next-line max-len
     CHANGE_FILTER: (state, action) => ({
       filter: action.payload,
       booksArray: state.booksArray,

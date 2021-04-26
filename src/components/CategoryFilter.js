@@ -1,10 +1,7 @@
 import Form from 'react-bootstrap/Form';
 import { PropTypes } from 'prop-types';
-import { useSelector } from 'react-redux';
 
 const CategoryFilter = ({ handleFilterChange }) => {
-  const { booksArray } = useSelector((state) => state.books);
-  console.log(booksArray);
   const categories = [
     'All',
     'Action',
@@ -15,7 +12,6 @@ const CategoryFilter = ({ handleFilterChange }) => {
     'Learning',
     'Sci-Fi',
   ];
-  // let book = { ID: null, Title: null, category: 'Action' };
 
   return (
     <Form>

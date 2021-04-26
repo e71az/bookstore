@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 import { useSelector } from 'react-redux';
 
 const CategoryFilter = ({ handleFilterChange }) => {
-  const { booksArray, filter } = useSelector((state) => state.books);
+  const { booksArray } = useSelector((state) => state.books);
   console.log(booksArray);
   const categories = [
     'All',
@@ -25,7 +25,7 @@ const CategoryFilter = ({ handleFilterChange }) => {
         <Form.Control
           as="select"
           onChange={(event) => {
-            handleFilterChange(event, filter);
+            handleFilterChange(event);
           }}
         >
           {categories.map((category) => (

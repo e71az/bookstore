@@ -6,22 +6,21 @@ const bookSlice = createSlice({
     booksArray: [
       {
         Title: 'Theory of everything',
-        category: 'Science',
-        ID: Math.floor(Math.random() * 100) + 1,
+        category: 'Action',
+        ID: Math.floor(Math.random() * 1000) + 1,
       },
       {
         Title: 'Creative crafting',
-        category: 'Arts',
-        ID: Math.floor(Math.random() * 100) + 1,
+        category: 'Biography',
+        ID: Math.floor(Math.random() * 1000) + 1,
       },
       {
         Title: 'Harry Potter',
-        category: 'Fiction',
-        ID: Math.floor(Math.random() * 100) + 1,
+        category: 'History',
+        ID: Math.floor(Math.random() * 1000) + 1,
       },
     ],
     filter: 'All',
-    filteredBooks: [],
 
   },
 

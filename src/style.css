@@ -1,0 +1,102 @@
+.linkText {
+  color: black;
+}
+
+.linkText :hover {
+  color: gray;
+}
+
+.user-icon {
+  color: #0069d9;
+}
+
+.selectbox {
+  width: 30%;
+  margin-left: 10%;
+}
+
+.selectbox-title {
+  width: 100%;
+}
+
+.card {
+  justify-content: space-between;
+  border: none;
+}
+
+button {
+  border: none;
+  color: cornflowerblue;
+}
+
+.category {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 12px;
+}
+
+.progress-element {
+  position: absolute;
+  right: 35%;
+}
+
+.progress-image {
+  height: 75px;
+  width: auto;
+}
+
+.remove-book {
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+}
+
+.header {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.hr-element {
+  width: 74.5%;
+}
+
+.add-book-form {
+  width: 74.5%;
+  margin: 0 auto;
+}
+
+.new-book-header {
+  margin-left: 13%;
+  color: gray;
+}
+
+.add-book-title {
+  width: 65%;
+}
+
+.add-book-category {
+  width: 15%;
+}
+
+.add-book-button {
+  width: 15%;
+  height: 10%;
+}
+
+.current {
+  color: gray;
+  font-size: 11px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.chno {
+  color: black;
+  margin-bottom: 13px;
+}
+
+.update {
+  height: 30px;
+  border: 1px;
+  color: aliceblue;
+  width: 175px;
+  background-color: #2784e7;
+  border-radius: 2px;
+  font-size: 15px;
+}

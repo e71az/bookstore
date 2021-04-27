@@ -1,6 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import Card from 'react-bootstrap/Card';
+// import Button from 'react-bootstrap/Button';
 import { useDispatch } from 'react-redux';
 import { REMOVE_BOOK } from '../reducers/books';
-
+import image from '../assets/circle-progress.png';
 // eslint-disable-next-line react/prop-types
 const Book = ({ book: { ID, Title, category } }) => {
   const dispatch = useDispatch();
@@ -10,21 +13,53 @@ const Book = ({ book: { ID, Title, category } }) => {
     dispatch(REMOVE_BOOK(ID));
   };
   return (
-    <tr>
-      <td>{ID}</td>
-      <td>{Title}</td>
-      <td>{category}</td>
-      <td>
-        <button
-          type="button"
-          onClick={(event) => {
-            handleRemoveBook(event);
-          }}
-        >
-          Remove Book
-        </button>
-      </td>
-    </tr>
+    <Card className="container card">
+      <Card.Body className="d-flex flex-row justify-content-between align-items-center">
+        <Card.Text>
+          <div className="d-flex flex-column">
+            <span className="category">{category}</span>
+            <span className="header">{Title}</span>
+            <a href="#" className="category mb-3 mr-3">
+              Suzzane Collins
+            </a>
+            <div className="d-flex flex-row ">
+              <a href="#" className="category mr-1">
+                Like
+              </a>
+              <a
+                href="#"
+                className="category remove-book mr-1 px-1"
+                onClick={(event) => {
+                  handleRemoveBook(event);
+                }}
+              >
+                Remove
+              </a>
+              <a href="#" className="category">
+                Edit
+              </a>
+            </div>
+          </div>
+        </Card.Text>
+        <div className="progress-element d-flex align-items-center">
+          <img className="progress-image" src={image} alt="progress-circle" />
+          <div className="ml-3">
+            <h5>25%</h5>
+            <span>Completed</span>
+          </div>
+        </div>
+        <div className="d-flex flex-column  justify-content-between">
+          <span className="current">CURRENT CHAPTER</span>
+          <span className="chno">Chapter 17</span>
+          <button
+            type="button"
+            className="update"
+          >
+            UPDATE PROGRESS
+          </button>
+        </div>
+      </Card.Body>
+    </Card>
   );
 };
 export default Book;

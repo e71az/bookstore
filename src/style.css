@@ -77,8 +77,14 @@
   width: 700px;
 }
 .selectbox {
-  width: 10%;
+  width: 30%;
+  margin-left: 10%;
 }
+
+.selectbox-title {
+  width: 100%;
+}
+
 .card {
   justify-content: space-between;
   border: none;

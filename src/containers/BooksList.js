@@ -24,7 +24,9 @@ const BooksList = () => {
     checkIfEmtpy = 'No books';
   } else if (filter === 'All') {
     checkIfEmtpy = booksArray.map((book) => <Book key={book.ID} book={book} />);
-  } else if (checkIfEmtpy.length > 0 && checkIfEmtpy !== undefined && checkIfEmtpy !== []) {
+  } else if (
+    checkIfEmtpy.length > 0 && checkIfEmtpy !== undefined && checkIfEmtpy !== []
+  ) {
     checkIfEmtpy = booksArray.filter((obj) => obj.category === filter);
     checkIfEmtpy = checkIfEmtpy.map((book) => (
       <Book key={book.ID} book={book} />
@@ -35,10 +37,10 @@ const BooksList = () => {
 
   return (
     <div>
-      <CategoryFilter handleFilterChange={handleFilterChange} />
-
+      <div className="ml-5">
+        <CategoryFilter handleFilterChange={handleFilterChange} />
+      </div>
       {checkIfEmtpy}
-
     </div>
   );
 };

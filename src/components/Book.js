@@ -16,31 +16,27 @@ const Book = ({ book: { ID, Title, category } }) => {
       <Card.Body className="d-flex flex-row justify-content-between">
         <Card.Text>
           <div className="d-flex flex-column">
-            <span className="category">
-              {category}
-            </span>
-            <span className="header">
-              {Title}
-            </span>
-            <a href="#" className="category mb-3">
+            <span className="category">{category}</span>
+            <span className="header">{Title}</span>
+            <a href="#" className="category mb-3 mr-3">
               Suzzane Collins
             </a>
             <div className="d-flex flex-row ">
-              <button type="button" className="category">
+              <a href="#" className="category mr-1">
                 Like
-              </button>
-              <button
-                type="button"
-                className="category"
+              </a>
+              <a
+                href="#"
+                className="category remove-book mr-1 px-1"
                 onClick={(event) => {
                   handleRemoveBook(event);
                 }}
               >
                 Remove
-              </button>
-              <button type="button" className="category">
+              </a>
+              <a href="#" className="category">
                 Edit
-              </button>
+              </a>
             </div>
           </div>
         </Card.Text>

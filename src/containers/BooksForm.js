@@ -36,7 +36,7 @@ const BooksForm = () => {
   return (
     <>
       <hr className="hr-element mt-5" />
-      <h5 className="new-book-header mt-5 mb-3">ADD NEW BOOK</h5>
+      <h5 className="new-book-header mt-4 mb-3">ADD NEW BOOK</h5>
       <Form className="add-book-form d-flex justify-content-between">
         <Form.Group
           className="add-book-title"

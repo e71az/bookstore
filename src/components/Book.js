@@ -12,7 +12,7 @@ const Book = ({ book: { ID, Title, category } }) => {
   };
   return (
 
-    <Card className="text-center container card">
+    <Card className="container card">
 
       <Card.Body className="d-flex flex-row justify-content-around">
         <Card.Text>

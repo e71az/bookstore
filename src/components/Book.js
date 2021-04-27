@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import { useDispatch } from 'react-redux';
 import { REMOVE_BOOK } from '../reducers/books';
 import image from '../assets/circle-progress.png';
@@ -48,16 +48,16 @@ const Book = ({ book: { ID, Title, category } }) => {
             <span>Completed</span>
           </div>
         </div>
-        <Button
-          variant="primary"
-          type="button"
-          className="removebtn"
-          onClick={(event) => {
-            handleRemoveBook(event);
-          }}
-        >
-          Remove Book
-        </Button>
+        <div className="d-flex flex-column  justify-content-between">
+          <span className="current">CURRENT CHAPTER</span>
+          <span className="chno">Chapter 17</span>
+          <button
+            type="button"
+            className="update"
+          >
+            UPDATE PROGRESS
+          </button>
+        </div>
       </Card.Body>
     </Card>
   );

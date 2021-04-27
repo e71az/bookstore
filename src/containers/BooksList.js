@@ -36,14 +36,9 @@ const BooksList = () => {
   return (
     <div>
       <CategoryFilter handleFilterChange={handleFilterChange} />
-      <table>
-        <tr>
-          <th>Book ID</th>
-          <th>Title</th>
-          <th>Category</th>
-        </tr>
-        {checkIfEmtpy}
-      </table>
+
+      {checkIfEmtpy}
+
     </div>
   );
 };

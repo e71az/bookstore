@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { useDispatch } from 'react-redux';
@@ -11,25 +12,23 @@ const Book = ({ book: { ID, Title, category } }) => {
     dispatch(REMOVE_BOOK(ID));
   };
   return (
-
     <Card className="container card">
-
-      <Card.Body className="d-flex flex-row justify-content-around">
+      <Card.Body className="d-flex flex-row justify-content-between">
         <Card.Text>
           <div className="d-flex flex-column">
             <span className="category">
-              {' '}
               {category}
-              {' '}
             </span>
             <span className="header">
-              {' '}
               {Title}
-              {' '}
             </span>
-            <span className="category">Suzzane</span>
-            <div className="d-flex flex-row justify-content-between">
-              <button type="button" className="category">Like</button>
+            <a href="#" className="category mb-3">
+              Suzzane Collins
+            </a>
+            <div className="d-flex flex-row ">
+              <button type="button" className="category">
+                Like
+              </button>
               <button
                 type="button"
                 className="category"
@@ -39,13 +38,13 @@ const Book = ({ book: { ID, Title, category } }) => {
               >
                 Remove
               </button>
-              <button type="button" className="category">Edit</button>
+              <button type="button" className="category">
+                Edit
+              </button>
             </div>
           </div>
         </Card.Text>
-        <Card.Text>
-          {category}
-        </Card.Text>
+        <Card.Text>{category}</Card.Text>
         <Button
           variant="primary"
           type="button"
@@ -57,9 +56,7 @@ const Book = ({ book: { ID, Title, category } }) => {
           Remove Book
         </Button>
       </Card.Body>
-
     </Card>
-
   );
 };
 export default Book;

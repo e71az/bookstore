@@ -12,12 +12,36 @@ const Book = ({ book: { ID, Title, category } }) => {
   };
   return (
 
-    <Card className="text-center container">
+    <Card className="text-center container card">
 
-      <Card.Body className="card d-flex flex-row justify-content-between">
-        <Card.Title>{ID}</Card.Title>
+      <Card.Body className="d-flex flex-row justify-content-around">
         <Card.Text>
-          {Title}
+          <div className="d-flex flex-column">
+            <span className="category">
+              {' '}
+              {category}
+              {' '}
+            </span>
+            <span className="header">
+              {' '}
+              {Title}
+              {' '}
+            </span>
+            <span className="category">Suzzane</span>
+            <div className="d-flex flex-row justify-content-between">
+              <button type="button" className="category">Like</button>
+              <button
+                type="button"
+                className="category"
+                onClick={(event) => {
+                  handleRemoveBook(event);
+                }}
+              >
+                Remove
+              </button>
+              <button type="button" className="category">Edit</button>
+            </div>
+          </div>
         </Card.Text>
         <Card.Text>
           {category}
@@ -25,6 +49,7 @@ const Book = ({ book: { ID, Title, category } }) => {
         <Button
           variant="primary"
           type="button"
+          className="removebtn"
           onClick={(event) => {
             handleRemoveBook(event);
           }}

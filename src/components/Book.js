@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { useDispatch } from 'react-redux';
 import { REMOVE_BOOK } from '../reducers/books';
+import image from '../assets/circle-progress.png';
 // eslint-disable-next-line react/prop-types
 const Book = ({ book: { ID, Title, category } }) => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const Book = ({ book: { ID, Title, category } }) => {
   };
   return (
     <Card className="container card">
-      <Card.Body className="d-flex flex-row justify-content-between">
+      <Card.Body className="d-flex flex-row justify-content-between align-items-center">
         <Card.Text>
           <div className="d-flex flex-column">
             <span className="category">{category}</span>
@@ -40,7 +41,13 @@ const Book = ({ book: { ID, Title, category } }) => {
             </div>
           </div>
         </Card.Text>
-        <Card.Text>{category}</Card.Text>
+        <div className="d-flex align-items-center">
+          <img className="progress-image" src={image} alt="progress-circle" />
+          <div className="ml-3">
+            <h5>25%</h5>
+            <span>Completed</span>
+          </div>
+        </div>
         <Button
           variant="primary"
           type="button"

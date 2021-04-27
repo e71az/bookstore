@@ -91,9 +91,14 @@ button {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 12px;
 }
+
+.progress-image {
+  height: 75px;
+  width: auto;
+}
 .remove-book {
-  border-left: 2px solid lightgrey;
-  border-right: 2px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
 }
 .header {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

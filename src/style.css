@@ -79,4 +79,20 @@
   }
   .card{
      justify-content: space-between;
+     border: none;
   }
+
+  button{
+    border: none;
+    color:cornflowerblue;
+  
+  }
+  .category{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 12px;
+
+  }
+   .header{
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+   }

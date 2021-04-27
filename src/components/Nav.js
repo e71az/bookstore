@@ -9,23 +9,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const MainNavbar = () => (
   <>
     <Navbar
-      // className="d-flex justify-self-center"
+      className="d-flex ml-5"
       collapseOnSelect
       expand="lg"
       bg="light"
       variant=""
     >
-      <Navbar.Brand href="#home">Math Magicians</Navbar.Brand>
+      <Navbar.Brand className="font-weight-bold" href="#home">
+        Bookstore CMS
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link className="linkText" href="/">Home</Nav.Link>
-          <Nav.Link className="linkText" href="/calc">Calculator</Nav.Link>
+          <Nav.Link className="linkText" href="/">
+            Books
+          </Nav.Link>
+          <Nav.Link className="linkText" href="/calc">
+            Categories
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
-      <Nav.Link className="linkText ml-auto" href="/quote">
+      <Nav.Link className="linkText mr-5" href="/quote">
         {' '}
-        <FontAwesomeIcon icon={faUserAlt} />
+        <FontAwesomeIcon className="user-icon" icon={faUserAlt} />
       </Nav.Link>
     </Navbar>
   </>

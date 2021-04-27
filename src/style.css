@@ -1,10 +1,3 @@
-.calc-container {
-  /* display: flex; */
-  text-align: center;
-
-  /* min-width: 700px; */
-}
-
 .linkText {
   color: black;
 }
@@ -100,4 +93,26 @@ button {
 }
 .header {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.add-book-form {
+  width: 74.5%;
+  margin: 0 auto;
+}
+
+.new-book-header {
+  margin-left: 13%;
+  color: gray;
+}
+.add-book-title {
+  width: 65%;
+}
+
+.add-book-category {
+  width: 15%;
+}
+
+.add-book-button {
+  width: 15%;
+  height: 10%;
 }

@@ -34,40 +34,48 @@ const BooksForm = () => {
   };
 
   return (
-    <Form>
-      <Form.Group controlId="exampleForm.ControlInput1">
-        <Form.Label>Title</Form.Label>
-        <Form.Control
-          type="input"
-          placeholder="Please enter title of the book"
-          onChange={(event) => {
-            handleChange('title', event);
-          }}
-        />
-      </Form.Group>
-      <Form.Group controlId="exampleForm.ControlSelect1">
-        <Form.Label>Category</Form.Label>
-        <Form.Control
-          as="select"
-          onChange={(event) => {
-            handleChange('category', event);
+    <>
+      <h5 className="new-book-header mt-5 mb-3">ADD NEW BOOK</h5>
+      <Form className="add-book-form d-flex justify-content-between">
+        <Form.Group
+          className="add-book-title"
+          controlId="exampleForm.ControlInput1"
+        >
+          <Form.Control
+            type="input"
+            placeholder="Book title"
+            onChange={(event) => {
+              handleChange('title', event);
+            }}
+          />
+        </Form.Group>
+        <Form.Group
+          className="add-book-category"
+          controlId="exampleForm.ControlSelect1"
+        >
+          <Form.Control
+            as="select"
+            onChange={(event) => {
+              handleChange('category', event);
+            }}
+          >
+            {categories.map((category) => (
+              <option key="i">{category}</option>
+            ))}
+          </Form.Control>
+        </Form.Group>
+        <Button
+          className="add-book-button"
+          variant="primary"
+          type="submit"
+          onClick={(event) => {
+            handleSubmit(event);
           }}
         >
-          {categories.map((category) => (
-            <option key="i">{category}</option>
-          ))}
-        </Form.Control>
-      </Form.Group>
-      <Button
-        variant="primary"
-        type="submit"
-        onClick={(event) => {
-          handleSubmit(event);
-        }}
-      >
-        Add book
-      </Button>
-    </Form>
+          Add book
+        </Button>
+      </Form>
+    </>
   );
 };
 export default BooksForm;

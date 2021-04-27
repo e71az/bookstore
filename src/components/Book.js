@@ -41,7 +41,7 @@ const Book = ({ book: { ID, Title, category } }) => {
             </div>
           </div>
         </Card.Text>
-        <div className="d-flex align-items-center">
+        <div className="progress-element d-flex align-items-center">
           <img className="progress-image" src={image} alt="progress-circle" />
           <div className="ml-3">
             <h5>25%</h5>

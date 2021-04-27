@@ -92,6 +92,11 @@ button {
   font-size: 12px;
 }
 
+.progress-element {
+  position: absolute;
+  right: 35%;
+}
+
 .progress-image {
   height: 75px;
   width: auto;
